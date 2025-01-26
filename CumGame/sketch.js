@@ -24,17 +24,31 @@ async function getCats(jsonData){
   if(catImages.length < 20){
     getCats(jsonData)
   }
+
+  if(hand1.length<3 && catsReady){
+    takeCard()
+    console.log("hey there")
+  }
 }
 
 function keyPressed(){
-  if(hand1.length<5 && catsReady == true){
+  if(hand1.length<5 && catsReady){
   takeCard()
   }
 }
 
 function takeCard(){
   let number = (Math.round(random(-0.5,19.49)))
-  let g = new Cats(catImages[number],number)
+  let rigtig =  catImages[number].slice(0,14)
+  let g
+  if(rigtig = "https://b.thum"){
+    g = new Cats(catImages[number],number)
+  }
+  else{
+    number = (Math.round(random(-0.5,19.49)))
+    let g = new Cats(catImages[number],number)
+  }
+  
   g.spawnCat()
   hand1.push(g)
   console.log(hand1)

@@ -25,7 +25,8 @@ async function getCats(jsonData){
   currentCat++
   if(catImages.length < 20){
     getCats(jsonData)
-  }
+    //Hej
+  } 
 }
 
 function keyPressed(){

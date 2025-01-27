@@ -24,11 +24,6 @@ async function getCats(jsonData){
   if(catImages.length < 20){
     getCats(jsonData)
   }
-
-  if(hand1.length<3 && catsReady){
-    takeCard()
-    console.log("hey there")
-  }
 }
 
 function keyPressed(){

@@ -8,27 +8,58 @@ canvas {
   display: block;
 }
 
-
+#startScreen{
+ position:fixed;
+ left:-100vw;
+ background-color: blue;
+ width:100vw;
+ height:100vh;
+}
+/*Fix the thing with hidden and visible and when startscreen is up and when u click start game it goes to the left and the game comes away from -100 left and comes on screen*/
+.hidden{
+  left:-100vw;
+}
 
 .board{
+  position:fixed;
   /* HUSK: 
   Position: fixed, er meget vigtigt for at få ting til at være på skærmen. */
-  position:fixed;
-  width:100%;
-  height: 100%;
+  
+  width:100vw;
+  height: 100vh;
   background:blueviolet;
+}
+
+#box1{
+  position: absolute;
+  border-radius: 10%;
+  border:5px solid black;
+  width:20%;
+  height:25%;
+  right: 55%;
+  bottom:40%;
+}
+#box2{
+  position: absolute;
+  border-radius: 10%;
+  border:5px solid black;
+  width:20%;
+  height:25%;
+  right: 25%;
+  bottom:40%;
 }
 
 #handOne{
   place-items:center;
-  position:fixed;
+  position:absolute;
   width:20%;
   height: 100%;
   background:rgb(19, 121, 29);
 }
 
 #handTwo{
-  position:fixed;
+  place-items:center;
+  position:absolute;
   right:0;
   width:20%;
   height: 100%;

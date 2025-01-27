@@ -1,9 +1,10 @@
 console.log("Class 1 is here")
 
 class Cats{
-    constructor(image,number) {
+    constructor(image,number,hand) {
         this.image = image
         this.number = number
+        this.hand = hand
 
         this.stats = catsStatsArray[number]
 
@@ -11,12 +12,17 @@ class Cats{
     tellMeMore(){
         console.log(this.image)
     }
-
-    spawnCat(){
-        
-    let newDiv = select('#handOne')
+    
+    spawnCat(totalNumberOfCats){
+    let newDiv
+    if(this.hand.name == "hand1"){
+    newDiv = select('#handOne')
+    }else if(this.hand.name == "hand2"){
+    newDiv = select('#handTwo')
+    }
 
     let cardDiv = createElement('div').addClass('card')
+    cardDiv.attribute("id",totalNumberOfCats)
     cardDiv.style('background-image',`url(${this.image})`)
 
     let name = createElement('div',this.stats.name).addClass('names')

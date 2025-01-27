@@ -16,8 +16,10 @@ async function setup(){
 }
 
 async function getCats(jsonData){
+  let isRight = jsonData[currentCat].data.thumbnail.slice(0,14)
   console.log(jsonData[currentCat])
-  if(jsonData[currentCat].data.thumbnail){
+
+  if(isRight === "https://b.thum"){
     catImages.push(jsonData[currentCat].data.thumbnail)
   }
   currentCat++
@@ -34,15 +36,8 @@ function keyPressed(){
 
 function takeCard(){
   let number = (Math.round(random(-0.5,19.49)))
-  let rigtig =  catImages[number].slice(0,14)
   let g
-  if(rigtig = "https://b.thum"){
-    g = new Cats(catImages[number],number)
-  }
-  else{
-    number = (Math.round(random(-0.5,19.49)))
-    let g = new Cats(catImages[number],number)
-  }
+  g = new Cats(catImages[number],number)
   
   g.spawnCat()
   hand1.push(g)

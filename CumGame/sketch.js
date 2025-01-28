@@ -25,7 +25,14 @@ async function setup(){
     takeCard(hand1)
     takeCard(hand2)
   }
+  
+  let startButton = document.getElementById("startButton")
+  startButton.addEventListener('click',() => {
+    select('#board').removeClass('hidden'); 
+    select('#startScreen').addClass('hidden')
+  })
 }
+
 
 async function getCats(jsonData){
   let isRight = jsonData[currentCat].data.thumbnail.slice(0,14)
@@ -36,9 +43,7 @@ async function getCats(jsonData){
   currentCat++
   if(catImages.length < 20){
     getCats(jsonData)
-  } 
-
-
+  }
 }
 
 //skal slettes er en teste funktion

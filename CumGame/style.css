@@ -10,21 +10,25 @@ canvas {
 
 #startScreen{
  position:fixed;
- left:-100vw;
  background-color: blue;
  width:100vw;
  height:100vh;
-}
-/*Fix the thing with hidden and visible and when startscreen is up and when u click start game it goes to the left and the game comes away from -100 left and comes on screen*/
-.hidden{
-  left:-100vw;
+ place-items: center;
 }
 
-.board{
-  position:fixed;
+#startButton{
+  position:absolute;
+  width:20vw;
+  height:10vh;
+  border-radius: 10%;
+  left:40vw;
+  top:50%;
+}
+
+#board{
   /* HUSK: 
   Position: fixed, er meget vigtigt for at få ting til at være på skærmen. */
-  
+  position:fixed;
   width:100vw;
   height: 100vh;
   background:blueviolet;
@@ -60,10 +64,14 @@ canvas {
 #handTwo{
   place-items:center;
   position:absolute;
-  right:0;
+  right:0%;
   width:20%;
   height: 100%;
   background:rgb(196, 32, 11);
+}
+
+.hidden{
+  left:-100vw;
 }
 
 .card{

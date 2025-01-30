@@ -22,7 +22,7 @@ class Cats{
     }
 
     let cardDiv = createElement('div').addClass('card')
-    cardDiv.attribute("id",totalNumberOfCats)
+    cardDiv.attribute("id","cat"+totalNumberOfCats) //Sets the new made cats id
     cardDiv.style('background-image',`url(${this.image})`)
 
     let name = createElement('div',this.stats.name).addClass('names')

@@ -25,12 +25,32 @@ async function setup(){
     takeCard(hand1)
     takeCard(hand2)
   }
+
+
+  //This is the code for loading tekst and making startscreen hidden and game visible when startgame is pressed
+  let startButton = select('#startButton');
+  let startScreen = select('#startScreen');
+  let board = select('#board');
+  let loadingText = select('#LoadingText')
+
+  loadingText.removeClass('visible');
+  loadingText.addClass('hidden');
+
+  startButton.removeClass('hidden');
+  startButton.addClass('visible');
+
+  startButton.mousePressed(() => {
+    startScreen.removeClass('visible');
+    startScreen.addClass('hidden');
+
+    board.removeClass('hidden');
+    board.addClass('visible');
+  });
+  //---
+
   
-  let startButton = document.getElementById("startButton")
-  startButton.addEventListener('click',() => {
-    select('#board').removeClass('hidden'); 
-    select('#startScreen').addClass('hidden')
-  })
+  chooseActiveCat("1") //Test
+
 }
 
 
@@ -63,4 +83,13 @@ function takeCard(whichHand){
   whichHand.push(g)
   //console.log(hand1)
   //console.log("Name: "+g.stats.name+"; "+"Health: "+g.stats.hp+"; Damage: "+g.stats.ad+"; Healing: "+g.stats.heal)
+}
+
+function chooseActiveCat(choosenCat){
+  //Choosen cat needs to be the cats id
+  //When calling this function, write id number of the cat. Since it says cat for you here. exsample: chooseActiveCat("1")
+  let cat = select(`#cat${choosenCat}`)
+  
+  console.log(cat)
+
 }

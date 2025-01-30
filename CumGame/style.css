@@ -8,8 +8,19 @@ canvas {
   display: block;
 }
 
+.screens{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease-in-out;
+}
+
+
+
 #startScreen{
- position:fixed;
+ position:absolute;
  background-color: blue;
  width:100vw;
  height:100vh;
@@ -21,14 +32,29 @@ canvas {
   width:20vw;
   height:10vh;
   border-radius: 10%;
-  left:40vw;
+  left:40%;
   top:50%;
+}
+#startButton:hover{
+  cursor: pointer;
+}
+
+#LoadingText{
+  position: absolute;
+  top: 40%; 
+  left: 50%;
+  transform: translate(-50%, -50%); /*Translate is a property in CSS that allows you to modify
+   the size, position or rotation of a element. and translate is the posititon*/
+  font-size: 3vw;
+  color: white;
+  text-align: center;
+
 }
 
 #board{
   /* HUSK: 
   Position: fixed, er meget vigtigt for at få ting til at være på skærmen. */
-  position:fixed;
+  position:absolute;
   width:100vw;
   height: 100vh;
   background:blueviolet;
@@ -70,8 +96,16 @@ canvas {
   background:rgb(196, 32, 11);
 }
 
-.hidden{
-  left:-100vw;
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s ease-in-out, visibility 0s linear 1s;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .5s ease-in-out;
 }
 
 .card{

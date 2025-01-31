@@ -8,6 +8,7 @@ hand2.name = "hand2"
 let currentCat = 0
 let catsReady = false
 let totalNumberOfCats = 0
+let selectedCat
 //Player 1's turn is true and players 2's turn is false
 let turn = true
 
@@ -49,8 +50,22 @@ async function setup(){
   //---
 
   
-  chooseActiveCat("1") //Test
+ 
 
+
+  //---
+
+
+let divs = document.querySelectorAll('.card'); // Select all divs
+
+    divs.forEach(div => {
+        div.addEventListener('click', () => {
+            selectedCat = div.id.slice(3,4)
+            console.log(selectedCat)
+            chooseActiveCat(selectedCat,"1") //Test //The 1 is which activeCatBox it needs to go in
+        });
+    });
+    
 }
 
 
@@ -85,10 +100,17 @@ function takeCard(whichHand){
   //console.log("Name: "+g.stats.name+"; "+"Health: "+g.stats.hp+"; Damage: "+g.stats.ad+"; Healing: "+g.stats.heal)
 }
 
-function chooseActiveCat(choosenCat){
+function chooseActiveCat(choosenCat,box){
   //Choosen cat needs to be the cats id
   //When calling this function, write id number of the cat. Since it says cat for you here. exsample: chooseActiveCat("1")
   let cat = select(`#cat${choosenCat}`)
+  let catBox = select(`#activeCatBox${box}`); //det her har fejl, og det er som om jeg ikke kan selecte activecatbox1 eller 2, og tror ikke appendChild er en function, så skal bruge noget andet.
+
+    console.log(catBox)
+
+    select("#activeCatBox1").app
+    //catBox.appendChild(cat);
+
   
   console.log(cat)
 

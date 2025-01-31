@@ -114,6 +114,14 @@ canvas {
  width:80%;
  height:18%;
  background-color:darkgoldenrod;
+
+ transition: border 0.3s ease;
+ border:0px solid transparent;
+}
+
+.card:not(.catSelected):hover{
+  border: 5px solid rgb(0, 0, 0);
+  cursor:pointer;
 }
 
 
@@ -126,7 +134,7 @@ canvas {
 .health{
   position: absolute;
   background-color:rgba(246, 255, 0, 0.6);
-  width:30%;
+  width:32%;
 }
 .damage{
   position: absolute;

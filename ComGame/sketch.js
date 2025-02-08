@@ -11,6 +11,7 @@ let totalNumberOfCats = 0
 let selectedCat
 //Player 1's turn is true and players 2's turn is false
 let turn = true
+let state = "Start Screen"
 
 async function setup(){
   
@@ -108,8 +109,9 @@ function chooseActiveCat(choosenCat,box){
 
     console.log(catBox)
 
-    select("#activeCatBox1").app
-    //catBox.appendChild(cat);
+    
+    cat.parent(catBox);
+    cat.addClass('activeCat')
 
   
   console.log(cat)
